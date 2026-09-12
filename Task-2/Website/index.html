@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard | Phishing Awareness Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">🛡</div>
+            <div>
+                <h2>PhishGuard</h2>
+                <span>Security Training</span>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-item active" onclick="openModule('home')">
+                <span>⌂</span> Dashboard
+            </button>
+
+            <div class="nav-title">TRAINING MODULES</div>
+
+            <button class="nav-item" onclick="openModule('module2')">
+                <span>02</span> What is Phishing?
+            </button>
+
+            <button class="nav-item" onclick="openModule('module3')">
+                <span>03</span> Email Detector
+            </button>
+
+            <button class="nav-item" onclick="openModule('module4')">
+                <span>04</span> Fake Login Pages
+            </button>
+
+            <button class="nav-item" onclick="openModule('module5')">
+                <span>05</span> Fraudulent Websites
+            </button>
+
+            <button class="nav-item" onclick="openModule('module6')">
+                <span>06</span> Social Engineering
+            </button>
+
+            <button class="nav-item" onclick="openModule('module7')">
+                <span>07</span> Case Studies
+            </button>
+
+            <button class="nav-item" onclick="openModule('module8')">
+                <span>08</span> Security Tips
+            </button>
+
+            <button class="nav-item" onclick="openModule('module9')">
+                <span>09</span> I Got Phished
+            </button>
+
+            <button class="nav-item" onclick="openModule('module10')">
+                <span>10</span> Final Quiz
+            </button>
+        </nav>
+
+        <div class="sidebar-progress">
+            <div class="progress-label">
+                <span>Your Progress</span>
+                <strong id="progressText">0%</strong>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+            <small id="completedText">0 of 9 modules completed</small>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- ================= HOME ================= -->
+        <section id="home" class="screen active">
+
+            <div class="topbar">
+                <div>
+                    <span class="eyebrow">CODSOFT • TASK 2</span>
+                    <h1>Phishing Awareness Program</h1>
+                    <p>Learn to identify, avoid and respond to phishing attacks.</p>
+                </div>
+
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    TRAINING ACTIVE
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-tag">CYBERSECURITY AWARENESS</span>
+                    <h2>Don't let a fake message<br>become a real problem.</h2>
+                    <p>
+                        This interactive training will teach you how attackers use
+                        phishing, fake websites and social engineering to steal
+                        information.
+                    </p>
+
+                    <button class="primary-btn" onclick="openModule('module2')">
+                        Start Training →
+                    </button>
+                </div>
+
+                <div class="hero-shield">
+                    <div class="shield">🛡</div>
+                    <div class="orbit orbit1"></div>
+                    <div class="orbit orbit2"></div>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div>
+                        <strong>9</strong>
+                        <span>Training Modules</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🧪</div>
+                    <div>
+                        <strong>4</strong>
+                        <span>Interactive Labs</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">❓</div>
+                    <div>
+                        <strong>6</strong>
+                        <span>Final Questions</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔐</div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Practical Focus</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">LEARNING PATH</span>
+                    <h2>Training Modules</h2>
+                </div>
+            </div>
+
+            <div id="moduleCards" class="module-grid"></div>
+
+        </section>
+
+
+        <!-- ================= MODULE 2 ================= -->
+        <section id="module2" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 02</span>
+                    <h1>What is Phishing?</h1>
+                    <p>Understand how phishing attacks work and what attackers want.</p>
+                </div>
+                <div class="module-icon-large">🎣</div>
+            </div>
+
+            <div class="content-grid">
+
+                <div class="content-card">
+                    <span class="card-label">DEFINITION</span>
+                    <h2>Phishing in simple words</h2>
+                    <p>
+                        Phishing is a cyberattack where an attacker pretends to be
+                        a trusted person, company or service to trick a victim into
+                        revealing sensitive information or performing an unsafe action.
+                    </p>
+
+                    <div class="info-box">
+                        <strong>Example:</strong>
+                        You receive an email saying your account will be blocked.
+                        It asks you to click a link and verify your password.
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-label">ATTACKER OBJECTIVES</span>
+                    <h2>What are criminals looking for?</h2>
+
+                    <div class="objective-list">
+                        <div class="objective">
+                            <span>🔑</span>
+                            <div>
+                                <strong>Credentials</strong>
+                                <p>Passwords, usernames and login sessions.</p>
+                            </div>
+                        </div>
+
+                        <div class="objective">
+                            <span>💳</span>
+                            <div>
+                                <strong>Financial Information</strong>
+                                <p>Card, banking and payment information.</p>
+                            </div>
+                        </div>
+
+                        <div class="objective">
+                            <span>👤</span>
+                            <div>
+                                <strong>Personal Information</strong>
+                                <p>Identity and other private information.</p>
+                            </div>
+                        </div>
+
+                        <div class="objective">
+                            <span>🏢</span>
+                            <div>
+                                <strong>Business Access</strong>
+                                <p>Corporate accounts, systems and data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-card lifecycle-card">
+                <span class="card-label">ATTACK LIFECYCLE</span>
+                <h2>How a phishing attack works</h2>
+
+                <div class="lifecycle">
+                    <div class="life-step">
+                        <span>01</span>
+                        <strong>Attacker</strong>
+                        <small>Creates the attack</small>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div class="life-step">
+                        <span>02</span>
+                        <strong>Fake Message</strong>
+                        <small>Email / SMS / DM</small>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div class="life-step">
+                        <span>03</span>
+                        <strong>Victim Interaction</strong>
+                        <small>Clicks or responds</small>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div class="life-step">
+                        <span>04</span>
+                        <strong>Fake Page</strong>
+                        <small>Information requested</small>
+                    </div>
+
+                    <div class="arrow">→</div>
+
+                    <div class="life-step danger">
+                        <span>05</span>
+                        <strong>Exposure</strong>
+                        <small>Information stolen</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">WARNING SIGNS</span>
+                <h2>Remember these red flags</h2>
+
+                <div class="warning-grid">
+                    <div>⚠️ Unexpected urgency</div>
+                    <div>⚠️ Suspicious sender</div>
+                    <div>⚠️ Strange links</div>
+                    <div>⚠️ Requests for OTP/password</div>
+                    <div>⚠️ Unrealistic rewards</div>
+                    <div>⚠️ Unusual payment requests</div>
+                </div>
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(2)">
+                ✓ Mark Module 2 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 3 ================= -->
+        <section id="module3" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 03</span>
+                    <h1>Suspicious Email Detector</h1>
+                    <p>Inspect an email and identify the phishing indicators.</p>
+                </div>
+                <div class="module-icon-large">📧</div>
+            </div>
+
+            <div class="lab-note">
+                🧪 <strong>Safe Training Simulation:</strong>
+                This email is fictional. Do not enter any real credentials.
+            </div>
+
+            <div class="email-window">
+
+                <div class="email-top">
+                    <span>✉ INBOX</span>
+                    <span>Training Simulation</span>
+                </div>
+
+                <div class="email-meta">
+                    <div><strong>FROM:</strong> Amazon Security &lt;security@amaz0n-account-help.com&gt;</div>
+                    <div><strong>SUBJECT:</strong> <span class="danger-text">URGENT! Your account will be suspended</span></div>
+                </div>
+
+                <div class="email-body">
+                    <p>Hello Customer,</p>
+
+                    <p>
+                        We detected suspicious activity on your account.
+                        Your account will be suspended if you do not verify
+                        your information immediately.
+                    </p>
+
+                    <p>
+                        Click the verification button below to confirm your account.
+                    </p>
+
+                    <button class="fake-link-btn" onclick="emailLinkWarning()">
+                        Verify Account
+                    </button>
+
+                    <p>Thank you,<br>Account Security Team</p>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">YOUR TASK</span>
+                <h2>Select every red flag you can identify</h2>
+
+                <div class="check-grid">
+                    <label class="check-option">
+                        <input type="checkbox" value="sender">
+                        <span>Suspicious sender/domain</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="urgency">
+                        <span>Creates unnecessary urgency</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="verification">
+                        <span>Unexpected verification request</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="action">
+                        <span>Pushes the user to take immediate action</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="greeting">
+                        <span>Generic greeting</span>
+                    </label>
+                </div>
+
+                <button class="primary-btn" onclick="analyzeEmail()">
+                    Analyze Email
+                </button>
+
+                <div id="emailResult" class="result-box"></div>
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(3)">
+                ✓ Mark Module 3 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 4 ================= -->
+        <section id="module4" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 04</span>
+                    <h1>Fake Login Page Detector</h1>
+                    <p>Learn how attackers use fake login pages to steal credentials.</p>
+                </div>
+                <div class="module-icon-large">🔑</div>
+            </div>
+
+            <div class="lab-note">
+                🧪 <strong>Safe Simulation:</strong> The fields below are disabled and
+                never collect or store credentials.
+            </div>
+
+            <div class="browser-window">
+
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+
+                    <div class="fake-url">
+                        🔒 https://secure-account-verification.example
+                    </div>
+                </div>
+
+                <div class="fake-login-page">
+                    <div class="fake-login-box">
+                        <div class="fake-logo">◈</div>
+                        <h2>Account Verification</h2>
+                        <p>Sign in to continue</p>
+
+                        <input type="text" placeholder="Username" disabled>
+                        <input type="password" placeholder="Password" disabled>
+
+                        <button disabled>Sign In</button>
+
+                        <small>Training simulation only</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">IDENTIFY THE RED FLAGS</span>
+                <h2>Which signs make this suspicious?</h2>
+
+                <div class="check-grid">
+                    <label class="check-option">
+                        <input type="checkbox" value="domain">
+                        <span>Unfamiliar or suspicious domain</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="login">
+                        <span>Unexpected login request</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="link">
+                        <span>Could have been reached through an unverified message link</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="https">
+                        <span>HTTPS automatically proves the website is genuine</span>
+                    </label>
+                </div>
+
+                <button class="primary-btn" onclick="analyzeLogin()">
+                    Check My Answer
+                </button>
+
+                <div id="loginResult" class="result-box"></div>
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(4)">
+                ✓ Mark Module 4 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 5 ================= -->
+        <section id="module5" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 05</span>
+                    <h1>Fraudulent Website Detection</h1>
+                    <p>Spot suspicious shopping websites before making a payment.</p>
+                </div>
+                <div class="module-icon-large">🌐</div>
+            </div>
+
+            <div class="fake-shop">
+
+                <div class="shop-header">
+                    <strong>MEGA DEALS</strong>
+                    <span>🛒 Cart</span>
+                </div>
+
+                <div class="shop-url">
+                    https://mega-deals-discount.example
+                </div>
+
+                <div class="product-area">
+
+                    <div class="phone-image">📱</div>
+
+                    <div class="product-details">
+                        <span class="sale-badge">LIMITED OFFER</span>
+                        <h2>Premium Smartphone X</h2>
+
+                        <div class="stars">★★★★★</div>
+
+                        <div class="price">
+                            ₹1,999
+                            <del>₹49,999</del>
+                        </div>
+
+                        <p class="stock-warning">
+                            🔥 ONLY 3 LEFT!
+                        </p>
+
+                        <button onclick="shopButtonWarning()">BUY NOW</button>
+
+                        <small>Seller: Unknown Electronics</small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">WEBSITE ANALYSIS</span>
+                <h2>Select the suspicious indicators</h2>
+
+                <div class="check-grid">
+                    <label class="check-option">
+                        <input type="checkbox" value="price">
+                        <span>Unrealistic price</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="urgency">
+                        <span>Artificial urgency / limited stock pressure</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="seller">
+                        <span>Unknown seller</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="payment">
+                        <span>Unusual or pressured payment request</span>
+                    </label>
+
+                    <label class="check-option">
+                        <input type="checkbox" value="cheap">
+                        <span>Low price always means fraud</span>
+                    </label>
+                </div>
+
+                <button class="primary-btn" onclick="analyzeSite()">
+                    Analyze Website
+                </button>
+
+                <div id="siteResult" class="result-box"></div>
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(5)">
+                ✓ Mark Module 5 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 6 ================= -->
+        <section id="module6" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 06</span>
+                    <h1>Social Engineering Lab</h1>
+                    <p>Learn how attackers manipulate emotions and human behaviour.</p>
+                </div>
+                <div class="module-icon-large">🧠</div>
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">INTERACTIVE SCENARIOS</span>
+                <h2>Identify the manipulation technique</h2>
+
+                <div id="scenarioArea"></div>
+            </div>
+
+            <div id="scenarioScore" class="score-panel"></div>
+
+            <button class="complete-btn" onclick="completeModule(6)">
+                ✓ Mark Module 6 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 7 ================= -->
+        <section id="module7" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 07</span>
+                    <h1>Phishing Case Studies</h1>
+                    <p>Understand how phishing appears in real-world situations.</p>
+                </div>
+                <div class="module-icon-large">📚</div>
+            </div>
+
+            <div class="case-grid">
+
+                <article class="case-card">
+                    <div class="case-number">CASE 01</div>
+                    <h2>Password Expiry Scam</h2>
+
+                    <p>
+                        A user receives a message saying their company account
+                        password is about to expire. The message contains a link
+                        to a login page.
+                    </p>
+
+                    <div class="case-lesson">
+                        <strong>Lesson</strong>
+                        <span>
+                            Do not use the message link. Open the known official
+                            service yourself.
+                        </span>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-number">CASE 02</div>
+                    <h2>Business Payment Request</h2>
+
+                    <p>
+                        An employee receives an urgent request appearing to come
+                        from a manager asking for a payment to a new bank account.
+                    </p>
+
+                    <div class="case-lesson">
+                        <strong>Lesson</strong>
+                        <span>
+                            Verify unusual payment requests using a separate trusted
+                            communication channel.
+                        </span>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-number">CASE 03</div>
+                    <h2>Delivery / Tax Message</h2>
+
+                    <p>
+                        A message claims that a package is waiting and a small
+                        tax or delivery fee must be paid immediately through a link.
+                    </p>
+
+                    <div class="case-lesson">
+                        <strong>Lesson</strong>
+                        <span>
+                            Verify the delivery directly through the official
+                            website or application.
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="content-card">
+                <span class="card-label">KEY TAKEAWAY</span>
+                <h2>Verify through a trusted route</h2>
+
+                <div class="takeaway">
+                    <div>1</div>
+                    <p>Do not trust the contact information inside the suspicious message.</p>
+                </div>
+
+                <div class="takeaway">
+                    <div>2</div>
+                    <p>Find the official website or known contact details independently.</p>
+                </div>
+
+                <div class="takeaway">
+                    <div>3</div>
+                    <p>For sensitive requests, confirm through a separate trusted channel.</p>
+                </div>
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(7)">
+                ✓ Mark Module 7 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 8 ================= -->
+        <section id="module8" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 08</span>
+                    <h1>Security Tips</h1>
+                    <p>Build habits that reduce your risk of becoming a phishing victim.</p>
+                </div>
+                <div class="module-icon-large">🔐</div>
+            </div>
+
+            <div class="tips-grid">
+
+                <div class="tip-card">
+                    <span>01</span>
+                    <div class="tip-icon">🔑</div>
+                    <h2>Use Strong Passwords</h2>
+                    <p>
+                        Use unique passwords for important accounts.
+                        A password manager can help generate and store them.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>02</span>
+                    <div class="tip-icon">🛡</div>
+                    <h2>Enable MFA / Passkeys</h2>
+                    <p>
+                        Multi-factor authentication provides another layer of
+                        protection if a password is exposed.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>03</span>
+                    <div class="tip-icon">🔗</div>
+                    <h2>Verify Links</h2>
+                    <p>
+                        Check the destination and prefer opening services directly
+                        instead of trusting unexpected links.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>04</span>
+                    <div class="tip-icon">⏸</div>
+                    <h2>Pause Under Pressure</h2>
+                    <p>
+                        Urgency is commonly used to stop people from thinking
+                        before acting.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>05</span>
+                    <div class="tip-icon">🔢</div>
+                    <h2>Never Share OTPs</h2>
+                    <p>
+                        Legitimate support staff should not ask you to disclose
+                        your OTP or authentication code.
+                    </p>
+                </div>
+
+                <div class="tip-card">
+                    <span>06</span>
+                    <div class="tip-icon">🚨</div>
+                    <h2>Report Suspicious Messages</h2>
+                    <p>
+                        Report suspicious emails or messages using your organisation's
+                        security process or the service's reporting feature.
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(8)">
+                ✓ Mark Module 8 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 9 ================= -->
+        <section id="module9" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 09</span>
+                    <h1>I Got Phished — What Now?</h1>
+                    <p>Quick response actions can reduce the damage after an incident.</p>
+                </div>
+                <div class="module-icon-large">🚨</div>
+            </div>
+
+            <div class="response-grid">
+
+                <div class="response-card safe">
+                    <div class="response-icon">🖱</div>
+                    <h2>I clicked, but entered nothing</h2>
+
+                    <ol>
+                        <li>Close the suspicious page.</li>
+                        <li>Do not download or run anything.</li>
+                        <li>Report the message if appropriate.</li>
+                        <li>Run security checks if a download occurred.</li>
+                    </ol>
+                </div>
+
+                <div class="response-card warning">
+                    <div class="response-icon">🔑</div>
+                    <h2>I entered my password</h2>
+
+                    <ol>
+                        <li>Change the password using the legitimate service.</li>
+                        <li>Change the same password anywhere it was reused.</li>
+                        <li>Enable MFA or passkeys.</li>
+                        <li>Review active sessions and account activity.</li>
+                    </ol>
+                </div>
+
+                <div class="response-card danger">
+                    <div class="response-icon">💳</div>
+                    <h2>I entered financial information</h2>
+
+                    <ol>
+                        <li>Contact your bank/provider through an official channel.</li>
+                        <li>Monitor transactions and account activity.</li>
+                        <li>Follow the provider's fraud-response instructions.</li>
+                        <li>Report the incident if required.</li>
+                    </ol>
+                </div>
+
+            </div>
+
+            <div class="alert-box">
+                <strong>⚠️ Important:</strong>
+                Be careful of people who contact you claiming they can “recover”
+                your account for a fee. Attackers may use the original incident
+                to run a second scam.
+            </div>
+
+            <button class="complete-btn" onclick="completeModule(9)">
+                ✓ Mark Module 9 Complete
+            </button>
+
+        </section>
+
+
+        <!-- ================= MODULE 10 ================= -->
+        <section id="module10" class="screen training-module">
+
+            <div class="module-header">
+                <div>
+                    <span class="module-number">MODULE 10</span>
+                    <h1>Final Phishing Awareness Quiz</h1>
+                    <p>Test what you learned throughout the training.</p>
+                </div>
+                <div class="module-icon-large">🏆</div>
+            </div>
+
+            <div id="quizContainer"></div>
+
+            <div class="quiz-actions">
+                <button class="primary-btn" onclick="submitQuiz()">
+                    Submit Quiz
+                </button>
+
+                <button class="secondary-btn" onclick="resetQuiz()">
+                    Retake Quiz
+                </button>
+            </div>
+
+            <div id="quizResult" class="quiz-result"></div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
