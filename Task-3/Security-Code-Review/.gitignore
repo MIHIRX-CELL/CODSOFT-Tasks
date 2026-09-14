@@ -1,0 +1,19 @@
+# Python virtual environments
+**/venv/
+
+# Python cache
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Local databases
+**/notes.db
+
+# Environment files / secrets
+.env
+**/.env
+
+# Editor / OS files
+*.swp
+*.swo
+.DS_Store

@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #08111f;
+    color: #e8f0f7;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 40px auto;
+}
+
+.container.small {
+    width: min(460px, 92%);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.card {
+    background: #101d2e;
+    border: 1px solid #24364d;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+.muted {
+    color: #91a3b5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #31465e;
+    border-radius: 8px;
+    background: #091524;
+    color: #ffffff;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #36d399;
+}
+
+button {
+    margin-top: 12px;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: #36d399;
+    color: #06120d;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #36d399;
+    text-decoration: none;
+}
+
+.demo {
+    text-align: center;
+    color: #91a3b5;
+    font-size: 13px;
+}
+
+.messages {
+    background: #2b1d1d;
+    border: 1px solid #714040;
+    color: #ffb7b7;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.logout {
+    border: 1px solid #31465e;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    margin-top: 35px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.note {
+    background: #101d2e;
+    border: 1px solid #24364d;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.note p {
+    color: #b9c7d4;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.delete {
+    background: #d9534f;
+    color: white;
+}
+
+.empty {
+    background: #101d2e;
+    border: 1px dashed #31465e;
+    border-radius: 12px;
+    padding: 30px;
+    color: #91a3b5;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
+    }
+}
+

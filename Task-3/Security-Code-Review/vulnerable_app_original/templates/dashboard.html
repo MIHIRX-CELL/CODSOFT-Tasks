@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Notes - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="topbar">
+        <div>
+            <div class="logo">🔐 Secure Notes</div>
+            <p class="muted">Security Code Review Training Application</p>
+        </div>
+
+        <a class="logout" href="{{ url_for('logout') }}">
+            Logout
+        </a>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <section class="welcome">
+        <h1>Hello, {{ username }} 👋</h1>
+        <p>Create and manage your personal notes.</p>
+    </section>
+
+    <section class="card">
+        <h2>Create New Note</h2>
+
+        <form action="{{ url_for('add_note') }}" method="POST">
+
+            <label>Title</label>
+            <input
+                type="text"
+                name="title"
+                placeholder="Note title"
+                required
+            >
+
+            <label>Content</label>
+            <textarea
+                name="content"
+                placeholder="Write your note..."
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">Add Note</button>
+
+        </form>
+    </section>
+
+    <section>
+        <h2 class="section-title">Your Notes</h2>
+
+        {% if notes %}
+
+            <div class="notes-grid">
+
+                {% for note in notes %}
+
+                <article class="note">
+
+                    <h3>{{ note["title"] }}</h3>
+
+                    <p>{{ note["content"] }}</p>
+
+                    <form
+                        action="{{ url_for('delete_note', note_id=note['id']) }}"
+                        method="POST"
+                    >
+                        <button class="delete" type="submit">
+                            Delete
+                        </button>
+                    </form>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty">
+                No notes yet. Create your first note above.
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+</body>
+</html>
